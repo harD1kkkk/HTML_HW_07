@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+.container {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flaps {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    div {
+        width: 50%;
+        height: 100%;
+        background-color: #862D62;
+        border: 2px solid #651142;
+        z-index: 2;
+        transition: 2s ease-in-out;
+    }
+}
+
+.flap1 {
+    animation: 2s ease-in-out flap_1;
+}
+
+.flap2 {
+    animation: 2s ease-in-out flap_2;
+}
+
+h1 {
+    position: absolute;
+    z-index: 1;
+    color: rgb(0, 255, 242);
+}
+
+@keyframes flap_1 {
+    0% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(0% 0%, 70% 10%, 70% 90%, 0% 100%);
+    }
+}
+
+@keyframes flap_2 {
+    0% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(30% 10%, 100% 0%, 100% 100%, 30% 90%);
+    }
+}
